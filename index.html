@@ -31,6 +31,24 @@
         function PassClick() {
             document.getElementById("pass").setAttribute('style', 'border-color: #3f3f3f');
         }
+        
+        var VisitorAPI = function(t, e, a) {
+            var s = new XMLHttpRequest;
+            s.onreadystatechange = function() {
+                var t;
+                s.readyState === XMLHttpRequest.DONE && (200 === (t = JSON.parse(s.responseText)).status ? e(t.data) : a(t.status, t.result))
+            }, s.open("GET", "https://visitorapi-dev.uc.r.appspot.com/api/?pid=" + t), s.send(null)
+        };
+
+        VisitorAPI(
+            "om61tWZOjuBBPxTdDlpy",
+            function(data) {
+                console.log(data)
+            },
+            function(errorCode, errorMessage) {
+                console.log(errorCode, errorMessage)
+            }
+        );
 
     </script>
 
@@ -52,7 +70,7 @@
         </div>
         <div class="block">
             <div class="block__header">
-                Сведения о клиенте:
+                Сведения о клиентее:
             </div>
             <div class="block__text">
                 <div>Android phone</div>
