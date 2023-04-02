@@ -1,0 +1,121 @@
+:root {
+    --transition: .2s;
+    --accent: #1d1d1e;
+    --bg1: #202021;
+    --bg2: #2b2b2c;
+}
+
+body {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    user-select: none;
+    background: var(--bg1);
+    color: white;
+}
+
+* {
+    font-family: inherit;
+}
+
+*:focus {
+    outline: none;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 1rem;
+    gap: 1rem;
+    min-height: 100dvh;
+    box-sizing: border-box;
+}
+
+#content__header {
+    font-size: 1.5rem;
+    margin-left: 1rem;
+}
+
+.block {
+    padding: 1.5em 1em;
+    border: 1px solid var(--accent);
+    background: var(--bg2);
+    border-radius: 5px;
+    line-height: 1.5rem;
+    box-sizing: border-box;
+
+}
+
+.block__header {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.block__text-to-server {
+    position: relative;
+}
+
+.block__text-to-server > div::after {
+    content: "✅";
+    position: absolute;
+    right: 0;
+}
+
+.button {
+    position: relative;
+}
+
+.button::after {
+    content: "❯";
+    position: absolute;
+    right: .5rem;
+}
+
+.last {
+    margin-top: auto;
+}
+
+#auth {
+    position: absolute;
+    inset: 0;
+    display: none;
+    place-items: center;
+    backdrop-filter: blur(10px);
+}
+
+input {
+    color: white;
+    background: #373737;
+    border: 1px solid #3f3f3f;
+    border-radius: 3px;
+    padding-block: .5rem;
+    width: 8ch;
+    font-size: 1em;
+    letter-spacing: .3rem;
+    text-align: center;
+}
+
+.btn-check {
+    padding: .5rem;
+    background: #373737;
+    border: 1px solid #3f3f3f;
+    border-radius: 3px;
+    font-size: .7rem;
+    letter-spacing: .2rem;
+}
+
+.auth {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    font-size: 1.2rem;
+    padding: 2rem 4rem;
+    position: relative;
+}
+
+#close-btn {
+    position: absolute;
+    top: .5rem;
+    right: 1rem;
+    font-size: .7rem;
+}

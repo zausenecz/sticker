@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="assets/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+
+    <script>
+        function AuthShow() {
+            document.getElementById("auth").setAttribute('style', 'display: grid');
+        }
+
+        function AuthHide() {
+            document.getElementById("auth").setAttribute('style', 'display: none');
+        }
+
+        function AuthCheck() {
+            if (document.getElementById("pass").value == "9216") {
+                document.getElementById("pass").setAttribute('style', 'border-color: green');
+            } else {
+                document.getElementById("pass").setAttribute('style', 'border-color: red');
+                document.getElementById("pass").value = "";
+            }
+        }
+
+        function PassClick() {
+            document.getElementById("pass").setAttribute('style', 'border-color: #3f3f3f');
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <div id="content">
+        <div id="content__header">
+            Sticker Tracker
+        </div>
+        <div class="block">
+            <div class="block__header">
+                Характеристики:
+            </div>
+            <div class="block__text">
+                <div>Велосипед Phoenix</div>
+                <div>Желтый / Черный</div>
+            </div>
+        </div>
+        <div class="block">
+            <div class="block__header">
+                Сведения о клиенте:
+            </div>
+            <div class="block__text">
+                <div>Android phone</div>
+                <div>IP: 192.168.1.1</div>
+            </div>
+        </div>
+        <div class="block">
+            <div class="block__header">
+                Отправлено на сервер:
+            </div>
+            <div class="block__text-to-server">
+                <div>Местоположение метки</div>
+                <div>История перемещений</div>
+                <div>Сведения о клиенте</div>
+            </div>
+        </div>
+
+        <div class="last block">
+            <div class="button" onclick="AuthShow()">АУТЕНТИФИКАЦИЯ ВЛАДЕЛЬЦА</div>
+        </div>
+
+    </div>
+
+    <div id="auth">
+        <div class="auth block">
+            <div id="close-btn" onclick="AuthHide()">вернуться</div>
+            <div>Код подтверждения</div>
+            <div><input maxlength="4" type="text" id="pass" onclick="PassClick()"></div>
+
+            <div class="btn-check" onclick="AuthCheck()">ПРОВЕРИТЬ</div>
+        </div>
+    </div>
+</body>
+
+</html>
