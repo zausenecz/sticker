@@ -10,47 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 
-    <script>
-        function AuthShow() {
-            document.getElementById("auth").setAttribute('style', 'display: grid');
-        }
-
-        function AuthHide() {
-            document.getElementById("auth").setAttribute('style', 'display: none');
-        }
-
-        function AuthCheck() {
-            if (document.getElementById("pass").value == "9216") {
-                document.getElementById("pass").setAttribute('style', 'border-color: green');
-            } else {
-                document.getElementById("pass").setAttribute('style', 'border-color: red');
-                document.getElementById("pass").value = "";
-            }
-        }
-
-        function PassClick() {
-            document.getElementById("pass").setAttribute('style', 'border-color: #3f3f3f');
-        }
-        
-        var VisitorAPI = function(t, e, a) {
-            var s = new XMLHttpRequest;
-            s.onreadystatechange = function() {
-                var t;
-                s.readyState === XMLHttpRequest.DONE && (200 === (t = JSON.parse(s.responseText)).status ? e(t.data) : a(t.status, t.result))
-            }, s.open("GET", "https://visitorapi-dev.uc.r.appspot.com/api/?pid=" + t), s.send(null)
-        };
-
-        VisitorAPI(
-            "om61tWZOjuBBPxTdDlpy",
-            function(data) {
-                console.log(data)
-            },
-            function(errorCode, errorMessage) {
-                console.log(errorCode, errorMessage)
-            }
-        );
-
-    </script>
+    <script src="assets/script.js"></script>
+    <script src="assets/agent.js"></script>
 
 </head>
 
